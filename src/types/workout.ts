@@ -1,5 +1,23 @@
-export type MuscleGroup = 'biceps' | 'triceps' | 'delts' | 'forearms'
-export type FocusFilter = 'full' | 'arms' | 'delts' | 'forearms' | 'finishers'
+export type MuscleGroup =
+  | 'biceps'
+  | 'triceps'
+  | 'forearms'
+  | 'front'
+  | 'side'
+  | 'rear'
+  | 'traps'
+
+export type FocusFilter =
+  | 'full'
+  | 'arms'
+  | 'forearms'
+  | 'front'
+  | 'side'
+  | 'rear'
+  | 'traps'
+  | 'finishers'
+
+export type WorkoutId = 'arms' | 'shoulders'
 export type SupersetGroup = 'a' | 'b' | 'c' | 'd'
 export type Technique = 'DROPSET' | 'REST-PAUSE' | 'MYO-REP' | 'TRIPLE-DROP' | 'MECH-DROP'
 
@@ -29,6 +47,37 @@ export interface Block {
   accent: string
   summary: string
   detail: string
+}
+
+export interface WorkoutFilterOption {
+  id: FocusFilter
+  label: string
+}
+
+export interface WorkoutVolumeTarget {
+  label: string
+  color: string
+  setsPerSession: number
+  weeklyRaw: number
+  effectiveRange: string
+  landmark: string
+}
+
+export interface WorkoutDefinition {
+  id: WorkoutId
+  name: string
+  startLabel: string
+  subtitle: string
+  overviewDescription: string
+  workspaceDescription: string
+  referenceTitle: string
+  summaryLabel: string
+  summaryGroups: MuscleGroup[]
+  shellBackground: string
+  filters: WorkoutFilterOption[]
+  volumeTargets: WorkoutVolumeTarget[]
+  blocks: Block[]
+  exercises: Exercise[]
 }
 
 export interface SessionState {

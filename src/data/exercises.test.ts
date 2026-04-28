@@ -1,8 +1,8 @@
 import { exercises } from './exercises'
 
 describe('exercises data', () => {
-  it('has 15 exercises', () => {
-    expect(exercises).toHaveLength(15)
+  it('has 12 exercises', () => {
+    expect(exercises).toHaveLength(12)
   })
   it('every exercise has required fields', () => {
     exercises.forEach(ex => {

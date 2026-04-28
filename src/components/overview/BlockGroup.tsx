@@ -12,15 +12,21 @@ export function BlockGroup({ block, exercises, onRestStart }: BlockGroupProps) {
 
   return (
     <section id={`block-${block.id}`}>
-      <div className="flex items-center gap-3 mb-3">
-        <span className="font-mono text-xs font-bold px-2 py-0.5 rounded"
-          style={{ color: block.accent, backgroundColor: block.accent + '18', border: `1px solid ${block.accent}33` }}>
+      <div className="flex items-center gap-3 mb-4">
+        <span
+          className="font-mono text-sm font-black w-7 h-7 rounded-md flex items-center justify-center shrink-0"
+          style={{ color: block.accent, backgroundColor: block.accent + '20', border: `1px solid ${block.accent}40` }}>
           {block.id}
         </span>
-        <h2 className="text-sm font-bold text-iron-100 uppercase tracking-wide">{block.name}</h2>
-        <span className="text-xs text-iron-600 hidden sm:block">{block.detail}</span>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-baseline gap-3">
+            <h2 className="text-base font-black text-iron-100 uppercase tracking-widest">{block.name}</h2>
+            <span className="text-xs text-iron-600 hidden sm:block truncate">{block.detail}</span>
+          </div>
+        </div>
+        <div className="h-px flex-1 max-w-12" style={{ backgroundColor: block.accent + '30' }} />
       </div>
-      <div className="space-y-2">
+      <div className="space-y-2.5">
         {exercises.map(ex => (
           <ExerciseCard key={ex.id} exercise={ex} blockAccent={block.accent} onRestStart={onRestStart} />
         ))}

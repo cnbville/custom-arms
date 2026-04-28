@@ -16,9 +16,9 @@ function MetricBadge({ label, value, tooltip }: { label: string; value: string; 
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <button className="flex flex-col items-start gap-0.5 bg-iron-800 rounded-lg px-3 py-2.5 hover:bg-iron-700 transition-colors cursor-help text-left w-full">
+        <button className="flex flex-col items-start gap-1 bg-iron-800 border border-iron-700/60 rounded-xl px-3.5 py-3 hover:bg-iron-700/80 hover:border-iron-600 transition-all cursor-help text-left w-full">
           <span className="text-[10px] font-mono uppercase tracking-widest text-iron-500">{label}</span>
-          <span className="font-mono text-base font-semibold text-iron-100 leading-none">{value}</span>
+          <span className="font-mono text-xl font-black text-iron-50 leading-none">{value}</span>
         </button>
       </PopoverTrigger>
       <PopoverContent className="bg-iron-800 border-iron-700 text-iron-200 text-xs p-2 max-w-48">
@@ -33,7 +33,7 @@ function parseSetsCount(sets: string): number {
   return match ? parseInt(match[1], 10) : 0
 }
 
-export function ExercisePanel({ exercise: ex, block, setsCompleted, onRestStart: _onRestStart }: ExercisePanelProps) {
+export function ExercisePanel({ exercise: ex, block, setsCompleted, onRestStart }: ExercisePanelProps) {
   const [scienceOpen, setScienceOpen] = useState(false)
   const totalSets = parseSetsCount(ex.sets)
 
@@ -52,9 +52,9 @@ export function ExercisePanel({ exercise: ex, block, setsCompleted, onRestStart:
   }
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 lg:space-y-6 lg:rounded-[28px] lg:border lg:border-iron-800/80 lg:bg-iron-950/45 lg:p-8 lg:shadow-[0_20px_60px_rgba(0,0,0,0.22)]">
       {/* Block context + set dots */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-4">
         <span className="font-mono text-xs uppercase tracking-widest font-bold"
           style={{ color: block.accent }}>
           {block.name}
@@ -74,25 +74,45 @@ export function ExercisePanel({ exercise: ex, block, setsCompleted, onRestStart:
 
       {/* Exercise name */}
       <div>
-        <h1 className="text-4xl font-black text-iron-100 leading-none tracking-tight">{ex.name}</h1>
+        <h1 className="text-4xl font-black text-iron-100 leading-none tracking-tight lg:text-5xl">{ex.name}</h1>
         <p className="text-xs font-mono text-iron-500 mt-1.5 uppercase tracking-wider">{ex.equipment}</p>
       </div>
 
       {/* Metric badges — 2×2 grid */}
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
         <MetricBadge label="Sets & Reps" value={ex.sets} tooltip="Total sets × rep range" />
         <MetricBadge label="Tempo" value={ex.tempo} tooltip={tempoTooltip} />
         <MetricBadge label="RPE Target" value={ex.rpe} tooltip={rpeMap[ex.rpe] ?? ex.rpe} />
         <MetricBadge label="Rest After" value={ex.rest} tooltip="Rest before next exercise" />
       </div>
 
-      {/* Last set technique badge */}
-      {ex.lastSetTechnique && (
-        <div className="inline-flex items-center gap-1.5 bg-amber-400/10 border border-amber-400/30 rounded-md px-3 py-1.5">
-          <span className="text-xs font-mono text-amber-400 uppercase tracking-wider">Last set:</span>
-          <span className="text-xs font-mono font-bold text-amber-300">{ex.lastSetTechnique}</span>
-        </div>
-      )}
+      <div className="flex flex-wrap items-center gap-2.5">
+        {ex.restSec > 0 ? (
+          <button
+            onClick={() => onRestStart(ex.restSec)}
+            className="rounded-full border border-iron-700 bg-iron-900 px-3.5 py-1.5 text-xs font-mono uppercase tracking-[0.22em] text-iron-200 transition-colors hover:border-iron-500 hover:text-iron-50"
+          >
+            Start {ex.rest} Rest
+          </button>
+        ) : (
+          <span className="rounded-full border border-iron-800 bg-iron-900/80 px-3.5 py-1.5 text-xs font-mono uppercase tracking-[0.22em] text-iron-500">
+            Direct hand-off
+          </span>
+        )}
+
+        {ex.lastSetTechnique && (
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1.5">
+            <span className="text-xs font-mono text-amber-400 uppercase tracking-wider">Last set</span>
+            <span className="text-xs font-mono font-bold text-amber-300">{ex.lastSetTechnique}</span>
+          </div>
+        )}
+
+        {ex.isFinisher && (
+          <span className="rounded-full border border-iron-700 px-3 py-1.5 text-xs font-mono uppercase tracking-[0.22em] text-iron-400">
+            Finisher
+          </span>
+        )}
+      </div>
 
       {/* Execution cue */}
       <div className="border-l-2 pl-4 py-1" style={{ borderColor: block.accent }}>

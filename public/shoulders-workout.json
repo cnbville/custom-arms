@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "workouts": [
+    {
+      "name": "Shoulder Annihilation",
+      "focus": "shoulders",
+      "notes": "Version 2 shoulder session with front, side, rear delt, and trap work.",
+      "exercises": [
+        {
+          "exercise": "Seated Dumbbell Press",
+          "sets": 4,
+          "reps": "6-8",
+          "rest_seconds": 120,
+          "tempo": "3-1-2",
+          "rpe": "8-9",
+          "notes": "Set the bench upright. Start neutral and rotate to pronated as you press.",
+          "muscle_group": "front",
+          "equipment": "dumbbell"
+        },
+        {
+          "exercise": "Cable Lateral Raises",
+          "sets": 4,
+          "reps": "15-20",
+          "rest_seconds": 45,
+          "tempo": "2-1-2",
+          "rpe": "9",
+          "notes": "Use a behind-the-body cable path and keep constant tension. Last set: myo-rep.",
+          "muscle_group": "side",
+          "equipment": "cable"
+        },
+        {
+          "exercise": "Chest-Supported Incline Dumbbell Reverse Flies",
+          "sets": 4,
+          "reps": "12-15",
+          "rest_seconds": 0,
+          "tempo": "3-1-2",
+          "rpe": "9",
+          "notes": "Stay chest-supported and lead the fly with the pinkies. Last set: drop set.",
+          "muscle_group": "rear",
+          "equipment": "dumbbell",
+          "technique": "superset",
+          "superset_group": "A"
+        },
+        {
+          "exercise": "Face Pulls",
+          "sets": 4,
+          "reps": "15-20",
+          "rest_seconds": 60,
+          "tempo": "2-2-2",
+          "rpe": "9",
+          "notes": "Pull toward the face with elbows high and rotate externally at the end. Last set: drop set.",
+          "muscle_group": "rear",
+          "equipment": "cable",
+          "technique": "superset",
+          "superset_group": "A"
+        },
+        {
+          "exercise": "Dumbbell Lateral Raises - Lengthened Partials",
+          "sets": 3,
+          "reps": "12-15 partials",
+          "rest_seconds": 60,
+          "tempo": "2-1-2",
+          "rpe": "9",
+          "notes": "Stay in the bottom third of the ROM to keep the stretch loaded. Last set: triple drop.",
+          "muscle_group": "side",
+          "equipment": "dumbbell"
+        },
+        {
+          "exercise": "Cable Reverse Flies - Single Arm",
+          "sets": 2,
+          "reps": "12-15",
+          "rest_seconds": 60,
+          "tempo": "3-1-2",
+          "rpe": "10",
+          "notes": "Use the low cable and pull across the body one arm at a time.",
+          "muscle_group": "rear",
+          "equipment": "cable",
+          "technique": "rest-pause"
+        },
+        {
+          "exercise": "Leaning Cable Lateral Raises",
+          "sets": 3,
+          "reps": "12-15",
+          "rest_seconds": 45,
+          "tempo": "2-1-2",
+          "rpe": "10",
+          "notes": "Lean away from the stack so the stretched position stays loaded. Last set: myo-rep.",
+          "muscle_group": "side",
+          "equipment": "cable"
+        },
+        {
+          "exercise": "Dumbbell Shrugs",
+          "sets": 3,
+          "reps": "10-12",
+          "rest_seconds": 90,
+          "tempo": "2-2-3",
+          "rpe": "9",
+          "notes": "Use heavy dumbbells, move straight up, and hold 2 seconds at the top. Last set: drop set.",
+          "muscle_group": "traps",
+          "equipment": "dumbbell"
+        },
+        {
+          "exercise": "Cable Shrugs Behind Back",
+          "sets": 2,
+          "reps": "12-15",
+          "rest_seconds": 0,
+          "tempo": "2-2-2",
+          "rpe": "10",
+          "notes": "Face away from the low cable so the pull stays up and slightly back.",
+          "muscle_group": "traps",
+          "equipment": "cable",
+          "technique": "rest-pause"
+        }
+      ]
+    }
+  ]
+}
