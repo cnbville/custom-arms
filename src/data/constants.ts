@@ -30,5 +30,6 @@ export const QUICK_REST_OPTIONS = [30, 45, 60, 90] as const
 export const VOLUME_DATA = [
   { label: 'Biceps',     color: '#7bb7ff', setsPerSession: 13, weeklyRaw: 26, effectiveRange: '~30–32', landmark: 'MRV' },
   { label: 'Triceps',    color: '#ff9b5e', setsPerSession: 13, weeklyRaw: 26, effectiveRange: '~30–32', landmark: 'MRV' },
+  { label: 'Side Delts', color: '#bd8cff', setsPerSession: 10, weeklyRaw: 20, effectiveRange: '~26',    landmark: 'Upper MAV → MRV' },
   { label: 'Forearms',   color: '#82e6a8', setsPerSession: 6,  weeklyRaw: 12, effectiveRange: '~14–15', landmark: 'Upper MAV' },
 ]

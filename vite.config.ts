@@ -12,12 +12,6 @@ const pagesBase =
 export default defineConfig({
   base: pagesBase,
   plugins: [react(), tailwindcss()],
-  server: {
-    allowedHosts: ['.loca.lt'],
-  },
-  preview: {
-    allowedHosts: ['.loca.lt'],
-  },
   resolve: {
     alias: { '@': path.resolve(__dirname, './src') },
   },

@@ -4,15 +4,16 @@
   --color-iron-900: #040509;
   --color-iron-800: #0a0c12;
   --color-iron-700: #11141e;
-  --color-iron-600: #596178;
-  --color-iron-500: #8d96ad;
-  --color-iron-400: #b7bfcd;
-  --color-iron-300: #d8d3ca;
-  --color-iron-200: #ebe5dc;
+  --color-iron-600: #1e2235;
+  --color-iron-500: #3d4258;
+  --color-iron-400: #6b7280;
+  --color-iron-300: #b8b1a7;
+  --color-iron-200: #d4cfc9;
   --color-iron-100: #f2ede6;
 
   --color-accent-biceps: #7bb7ff;
   --color-accent-triceps: #ff9b5e;
+  --color-accent-delts: #bd8cff;
   --color-accent-forearms: #82e6a8;
 
   --font-sans: "Geist", system-ui, sans-serif;
@@ -31,7 +32,7 @@
   --secondary: 228 15% 12%;
   --secondary-foreground: 35 15% 85%;
   --muted: 228 15% 12%;
-  --muted-foreground: 30 12% 82%;
+  --muted-foreground: 30 10% 70%;
   --accent: 228 15% 15%;
   --accent-foreground: 35 20% 93%;
   --destructive: 0 62% 55%;

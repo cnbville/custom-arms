@@ -1,5 +1,3 @@
 export * from './exercises'
 export * from './blocks'
 export * from './constants'
-export * from './shoulders'
-export * from './workouts'
