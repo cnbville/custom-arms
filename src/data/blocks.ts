@@ -1,0 +1,22 @@
+import type { Block } from '@/types'
+
+export const blocks: Block[] = [
+  { id: 'A', name: 'Heavy Compound', accent: '#ff5f6d',
+    summary: 'Rep range variation, heavy tension, and true compound loading to wake up the highest-threshold fibers first.',
+    detail: '6–8 reps · 2 min rest · antagonist pairing' },
+  { id: 'B', name: 'Primary Cable', accent: '#69b7ff',
+    summary: 'Constant tension work with drop sets on the last set to keep the stimulus high without messy loading changes.',
+    detail: '10–12 reps · 90s rest · drop-set closer' },
+  { id: 'C', name: 'Stretch Position', accent: '#d28dff',
+    summary: 'Lengthened-biased isolation to exploit the strongest hypertrophy signal in the session.',
+    detail: '10–15 reps · 90s rest · long-length emphasis' },
+  { id: 'D', name: 'Isolation / Rest-Pause', accent: '#67d7ff',
+    summary: 'Short, brutal rest-pause work to stack effective reps once the heavy work is already done.',
+    detail: 'Failure work · 15s intra-set rest · 90s between pairs' },
+  { id: 'E', name: 'Arm Finishers', accent: '#ffd670',
+    summary: 'Pure metabolic stress to empty the tank and finish the arms with short rests and nasty techniques.',
+    detail: '60s rest · myo-reps and 21s' },
+  { id: 'G', name: 'Forearm Finish', accent: '#82e6a8',
+    summary: 'Wrist flexor and brachioradialis work to finish the session with complete arm development.',
+    detail: '6 total sets · 45s rest · slow-twitch friendly ranges' },
+]

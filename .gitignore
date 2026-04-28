@@ -1,0 +1,13 @@
+.DS_Store
+.claude/
+.git-backup-*/
+.tmp-vitest/
+dist/
+node_modules/
+coverage/
+*.log
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+vite.config.js
